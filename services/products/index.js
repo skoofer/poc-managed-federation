@@ -1,6 +1,8 @@
 const { ApolloServer, gql } = require("apollo-server");
 const { buildFederatedSchema } = require("@apollo/federation");
 
+require('dotenv').config()
+
 const typeDefs = gql`
   extend type Query {
     topProducts(first: Int = 5): [Product]

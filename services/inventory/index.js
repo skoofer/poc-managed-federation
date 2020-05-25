@@ -1,6 +1,8 @@
 const { ApolloServer, gql } = require("apollo-server");
 const { buildFederatedSchema } = require("@apollo/federation");
 
+require('dotenv').config()
+
 const typeDefs = gql`
   extend type Product @key(fields: "upc") {
     upc: String! @external
